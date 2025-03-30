@@ -10,8 +10,8 @@
 
 char auth[] = BLYNK_AUTH_TOKEN;
 
-char ssid[] = "Samsung galaxy a73s 5g";  // type your wifi name
-char pass[] = "1234567890";  // type your wifi password
+char ssid[] = "Samsung galaxy a73s 5g"; 
+char pass[] = "1234567890";  
 
 #define DHTPIN 2          // Mention the digital pin where you connected 
 #define DHTTYPE DHT11     // DHT 11  
@@ -20,7 +20,7 @@ BlynkTimer timer;
 
 void sendSensor(){
   float h = dht.readHumidity();
-  float t = dht.readTemperature(); // or dht.readTemperature(true) for Fahrenheit
+  float t = dht.readTemperature(); 
   if (isnan(h) || isnan(t)) {
     Serial.println("Failed to read from DHT sensor!");
     return;
@@ -36,7 +36,7 @@ void sendSensor(){
 
 
   if(t > 35){
-   // Blynk.email("shameer50@gmail.com", "Alert", "Temperature over 28C!");
+   
     Blynk.logEvent("temp_alert","Temp above 30 degree");
   }
 }
