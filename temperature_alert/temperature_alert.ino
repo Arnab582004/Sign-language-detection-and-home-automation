@@ -13,8 +13,8 @@ char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "Samsung galaxy a73s 5g"; 
 char pass[] = "1234567890";  
 
-#define DHTPIN 2          // Mention the digital pin where you connected 
-#define DHTTYPE DHT11     // DHT 11  
+#define DHTPIN 2         
+#define DHTTYPE DHT11      
 DHT dht(DHTPIN, DHTTYPE);
 BlynkTimer timer;
 
