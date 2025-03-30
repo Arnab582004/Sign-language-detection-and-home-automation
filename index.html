@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Your Life with Open Vision</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Futuristic gradient background */
+      color: #fff;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+      animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0, 230, 230, 0.2), transparent);
+      animation: pulseGlow 3s infinite;
+      z-index: -1;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif; /* Futuristic font */
+      font-size: 3.5rem;
+      margin: 0;
+      color: #00e6e6; /* Neon cyan color */
+      text-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6, 0 0 30px #00e6e6; /* Glowing effect */
+      animation: glow 2s infinite alternate; /* Glowing animation */
+    }
+
+    .hero-content {
+      text-align: center;
+      padding: 50px 20px;
+      animation: slideIn 1.5s ease-in-out; /* Slide-in animation */
+    }
+
+    .hero-content h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #00e6e6;
+      text-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6;
+      animation: pulse 2s infinite; /* Pulsing animation */
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #f0f0f0;
+      animation: fadeIn 3s ease-in-out; /* Fade-in animation */
+    }
+
+    #features {
+      padding: 50px 20px;
+      text-align: center;
+      background: linear-gradient(to bottom, #ffffff, #e6e6e6); /* Subtle gradient */
+      color: #333;
+      animation: fadeIn 2s ease-in-out;
+      border-top: 5px solid #00e6e6; /* Add a glowing border */
+    }
+
+    #features h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #1e3c72;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      animation: glow 2s infinite alternate; /* Glowing animation */
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: linear-gradient(135deg, #ffffff, #d9d9d9); /* Subtle gradient */
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.4s, box-shadow 0.4s;
+      animation: zoomIn 1s ease-in-out; /* Zoom-in animation */
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d; /* Enable 3D transformations */
+      perspective: 1000px; /* Add perspective for 3D effect */
+    }
+
+    .feature-card:hover {
+      transform: rotateY(15deg) translateY(-10px) scale(1.05); /* 3D rotation and lift */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 230, 230, 0.2), rgba(255, 204, 0, 0.2));
+      opacity: 0;
+      transition: opacity 0.4s;
+      z-index: 0;
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+      z-index: 1;
+      position: relative;
+    }
+
+    .feature-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #1e3c72;
+      animation: slideIn 1.5s ease-in-out; /* Slide-in animation */
+      z-index: 1;
+      position: relative;
+    }
+
+    .feature-card p {
+      font-size: 1rem;
+      color: #555;
+      z-index: 1;
+      position: relative;
+    }
+
+    .feature-card .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 25px;
+      background: #1e3c72;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+      z-index: 1;
+      position: relative;
+    }
+
+    .feature-card .btn:hover {
+      background: #ffcc00; /* Change color on hover */
+      transform: scale(1.1) rotateX(10deg); /* Slightly enlarge and tilt the button */
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      font-size: 0.9rem;
+      animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6, 0 0 30px #00e6e6;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Change Your Life with Open Vision</h1>
+  </div>
+</header>
+
+<div class="hero-content">
+  <h2>Empower Your World with AI-Powered Vision</h2>
+  <p>Explore cutting-edge solutions with real-time vision-based applications.</p>
+</div>
+
+<section id="features" class="features">
+  <h1>Our Smart Features</h1>
+  <div class="feature-grid">
+
+    <div class="feature-card" onclick="startVirtualKeyboard()">
+      <img src="virkey.jpg" alt="Virtual Keyboard" class="feature-img">
+      <h3>Virtual Keyboard</h3>
+      <p>Use hand gestures to type with a virtual keyboard.</p>
+      <a href="#" class="btn">Start</a>
+    </div>
+
+    <div class="feature-card" onclick="startSignLanguage()">
+      <img src="signlang.jpg" alt="Sign Language" class="feature-img">
+      <h3>Sign Language Detection</h3>
+      <p>Detect and translate sign language in real-time.</p>
+      <a href="#" class="btn">Start</a>
+    </div>
+
+    <div class="feature-card" onclick="startHomeAutomation()">
+      <img src="homeauto.jpg" alt="Home Automation" class="feature-img">
+      <h3>Home Automation</h3>
+      <p>Control your devices with gestures.</p>
+      <a href="#" class="btn">Start</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Open Vision. All Rights Reserved.</p>
+</footer>
+
+<script>
+  // Function to start the Home Automation process
+  function startHomeAutomation() {
+    fetch('http://127.0.0.1:5000/run-hand-tracking') // Call the Flask server endpoint
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "success") {
+          alert(data.message); // Show success message
+        } else {
+          alert("Error: " + data.message); // Show error message
+        }
+      })
+      .catch(error => console.error('Error:', error)); // Log any errors
+  }
+
+  // Function to stop the Home Automation process
+  function stopHomeAutomation() {
+    fetch('http://127.0.0.1:5000/stop-hand-tracking') // Call the Flask server endpoint
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "success") {
+          alert(data.message); // Show success message
+        } else {
+          alert("Error: " + data.message); // Show error message
+        }
+      })
+      .catch(error => console.error('Error:', error)); // Log any errors
+  }
+
+  // Function to fetch serial output from the Flask server
+  function fetchSerialOutput() {
+    fetch('http://127.0.0.1:5000/get-serial-output')
+      .then(response => response.json())
+      .then(data => {
+        const serialOutputDiv = document.getElementById('serial-output');
+        serialOutputDiv.textContent = `Fingers State: ${data.serial_output}`;
+      })
+      .catch(error => console.error('Error fetching serial output:', error));
+  }
+
+  // Fetch serial output every second
+  setInterval(fetchSerialOutput, 1000);
+
+  // Function to start the Virtual Keyboard process
+  function startVirtualKeyboard() {
+    fetch('http://127.0.0.1:5000/run-virtual-keyboard') // Call the Flask server endpoint
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "success") {
+          alert(data.message); // Show success message
+        } else {
+          alert("Error: " + data.message); // Show error message
+        }
+      })
+      .catch(error => console.error('Error:', error)); // Log any errors
+  }
+
+  // Function to stop the Virtual Keyboard process (optional)
+  function stopVirtualKeyboard() {
+    fetch('http://127.0.0.1:5000/stop-virtual-keyboard') // Call the Flask server endpoint
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "success") {
+          alert(data.message); // Show success message
+        } else {
+          alert("Error: " + data.message); // Show error message
+        }
+      })
+      .catch(error => console.error('Error:', error)); // Log any errors
+  }
+
+  // Function to start the Sign Language Detection process
+  function startSignLanguage() {
+    fetch('http://127.0.0.1:5000/run-sign-language') // Call the Flask server endpoint
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "success") {
+          alert(data.message); // Show success message
+        } else {
+          alert("Error: " + data.message); // Show error message
+        }
+      })
+      .catch(error => console.error('Error:', error)); // Log any errors
+  }
+
+  // Function to stop the Sign Language Detection process (optional)
+  function stopSignLanguage() {
+    fetch('http://127.0.0.1:5000/stop-sign-language') // Call the Flask server endpoint
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "success") {
+          alert(data.message); // Show success message
+        } else {
+          alert("Error: " + data.message); // Show error message
+        }
+      })
+      .catch(error => console.error('Error:', error)); // Log any errors
+  }
+</script>
+
+</body>
+</html>
+``` 
