@@ -4,22 +4,21 @@
 
 #define BLYNK_PRINT Serial
 #include <BlynkSimpleEsp32.h>
- 
-// Blynk settings
+
 char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "Samsung galaxy a73s 5g";
 char pass[] = "1234567890";
 
-// Vibration sensor settings
-const int vibrationPin = 34; // Use the appropriate analog pin on your ESP8266
-const int threshold = 500;  // Adjust this threshold based on your sensor and environment
 
-// Blynk Virtual Pins
+const int vibrationPin = 34; 
+const int threshold = 500;  
+
+
 #define VIRTUAL_PIN_VIBRATION  V1  
-// Timer settings
+
 BlynkTimer timer;
 
-// Function prototypes
+
 void checkVibration();
 void sendAlert();
 
