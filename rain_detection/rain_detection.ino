@@ -8,7 +8,7 @@
 #include <BlynkSimpleEsp8266.h>
 
 #define RAIN_SENSOR_PIN A0
-#define RAIN_SENSOR_THRESHOLD 500 // adjust this value based on your sensor
+#define RAIN_SENSOR_THRESHOLD 500 
 
 char ssid[] = "Samsung galaxy a73s 5g";
 char pass[] = "1234567890";
